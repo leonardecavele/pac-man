@@ -1,20 +1,18 @@
 *This project has been created as part of the 42 curriculum by ldecavel and relaforg.*
 
-# Pac-Man
-
-## Description
+### Description
 
 The **Pac-Man** project goal is to recreate a pacman game using an extern
 maze generator package from the 42 **A-Maze_Ing** project.
 
-## Instructions
+### Instructions
 
-### Requirements
+#### Requirements
 
 - Python 3.12+
 - `make`
 
-### Installation & Run
+#### Installation & Run
 
 ```sh
 make run
@@ -28,7 +26,7 @@ To use a custom config file:
 make run ARGS=path/to/config.json
 ```
 
-### Build (standalone binary)
+#### Build (standalone binary)
 
 ```sh
 make build
@@ -36,7 +34,7 @@ make build
 
 Produces a single `pac-man` executable in `dist/` via Nuitka.
 
-### Other targets
+#### Other targets
 
 | Command | Description |
 |---------|-------------|
@@ -44,7 +42,7 @@ Produces a single `pac-man` executable in `dist/` via Nuitka.
 | `make lint` | Run flake8 + mypy |
 | `make clean` | Remove venv and caches |
 
-## Resources
+### Resources
 
 - [The Pacman Dossier](https://pacman.holenet.info)
 - [Online Pacman game](https://pacman.live)
@@ -55,7 +53,7 @@ Produces a single `pac-man` executable in `dist/` via Nuitka.
 - [Google pacman](https://www.google.com/logos/2010/pacman10-i.html)
 - [Pacman live](https://pacman.live/)
 
-## Configuration
+### Configuration
 
 The config file is a custom JSON with comments file.
 It support python-like (#) and C-like (//) comments, the syntax is otherwise the
@@ -78,20 +76,20 @@ Example:
 >[!NOTE]
 > There is no default values
 
-## Highscore
+### Highscore
 
 Highscores are saved at the end of a game, and linked to a chosen username.
 Usernames are not unique, as you can play the game multiple times.
 They are saved in a persistant file located in ~/.local/share/pacman.
 Then on the main menu only the 10 bests score are displayed.
 
-## Maze Generation
+### Maze Generation
 
 The **mazegenerator-00001-py3-none-any.whl** is installed and imported to generate
 random maze to play Pac-Man on. It is made by 42 central based on the 42 A_Maze_ing
 project (cf. [relaforg's a_maze_ing](https://github.com/relaforg/a_maze_ing), [ldecavel's a_maze_ing](https://github.com/parad0xe/a-maze-ing)... etc.)
 
-## Implementation
+### Implementation
 
 The game is written in **Python 3.12+** using **raylib** (via the `pyray` bindings)
 for rendering and audio. Maze data comes from the **mazegenerator** wheel, and game
@@ -106,7 +104,7 @@ maze) and a random mode (procedurally generated maze) are supported.
 Quality is enforced with **mypy** for static typing and **flake8** for style,
 both run automatically via a GitHub Actions CI pipeline on every push.
 
-## General Software Architecture
+### General Software Architecture
 
 The project is split into four main modules:
 
@@ -126,7 +124,7 @@ The project is split into four main modules:
 `App` (in `src/app.py`) wires everything together: it owns the views, the game
 state, and the main loop, and handles view transitions (menu → game → end).
 
-## Project Management
+### Project Management
 
 The project was managed collaboratively * using GitHub flow: features developed
 on dedicated branches and merged into `dev` via pull requests, then merged to
